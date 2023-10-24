@@ -40,7 +40,7 @@ jobs:
         
     - name: Build Docker image
       run: |
-        docker build -t github-actions-demo:latest .
+        docker build -t docker.io/smokepaus/github-actions-demo:latest .
         
     - name: Push Docker image to Registry
       run: |
