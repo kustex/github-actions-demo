@@ -32,6 +32,17 @@ jobs:
     - name: Format
       run: |
         make format 
+    - name: Login to Container Registry
+      run: |
+        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin your-container-registry-url
+    - name: Build Docker image
+      run: |
+        docker build -t your-image-name:latest .
+        
+    - name: Push Docker image to Registry
+      run: |
+        docker push your-container-registry-url/github-actions-demo-docker-image:latest
+    
 
 
       
