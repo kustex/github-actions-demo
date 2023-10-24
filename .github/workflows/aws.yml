@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: AWS Python 3.8.16
+name: AWS Python 3.10.13
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the main branch
@@ -16,10 +16,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 3.8.16
+    - name: Set up Python 3.10.13
       uses: actions/setup-python@v1
       with:
-        python-version: 3.8.16
+        python-version: 3.10.13
     - name: Install dependencies
       run: |
         make install-aws
