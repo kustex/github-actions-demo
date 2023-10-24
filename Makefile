@@ -2,6 +2,10 @@ install:
 	pip install --upgrade pip &&\
 		pip install -r requirements.txt
 
+install-aws:
+	pip install --upgrade pip &&\
+		pip install -r requirements-aws.txt
+
 format:
 	black *.py
 
