@@ -48,7 +48,7 @@ jobs:
         
     - name: Push Docker image to Registry
       run: |
-        docker push docker.io/github-actions-demo:latest
+        docker push https://hub.docker.com/github-actions-demo:latest
     
 
 
