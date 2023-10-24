@@ -36,11 +36,7 @@ jobs:
         make format 
         
     - name: Login to Github Container Registry
-      uses: ./
-      with:
-        registry: https://hub.docker.com
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_TOKEN }}
+      run: echo "${{ secrets.DOCKER_TOKEN }}" | docker login docker.io -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
         
     - name: Build Docker image
       run: |
@@ -48,7 +44,7 @@ jobs:
         
     - name: Push Docker image to Registry
       run: |
-        docker push https://hub.docker.com/github-actions-demo:latest
+        docker push docker.io/github-actions-demo:latest
     
 
 
