@@ -44,7 +44,7 @@ jobs:
         
     - name: Push Docker image to Registry
       run: |
-        docker push docker.io/github-actions-demo:latest
+        docker push docker.io/smokepaus/github-actions-demo:latest
     
 
 
