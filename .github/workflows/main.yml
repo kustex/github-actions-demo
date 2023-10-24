@@ -26,12 +26,22 @@ jobs:
     - name: Lint 
       run: |
         make lint
+        
     - name: Test  
       run: |
         make test 
+        
     - name: Format
       run: |
         make format 
+        
+    - name: Login to Github Container Registry
+      uses: ./
+      with:
+        registry: https://hub.docker.com
+        username: ${{ secrects.DOCKER_USERNAME }}
+        password: ${{ secrects.DOCKER_PASSWORD }}
+        
     - name: Build Docker image
       run: |
         docker build -t github-actions-demo:latest .
