@@ -33,8 +33,8 @@ jobs:
       run: |
         make format 
     - name: Login to Container Registry
-      run: |
-	echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin https://hub.docker.com/
+      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin https://hub.docker.com/
+       
     - name: Build Docker image
       run: |
         docker build -t github-actions-demo:latest .
