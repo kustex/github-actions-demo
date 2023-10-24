@@ -39,8 +39,8 @@ jobs:
       uses: ./
       with:
         registry: https://hub.docker.com
-        username: ${{ secrects.DOCKER_USERNAME }}
-        password: ${{ secrects.DOCKER_PASSWORD }}
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
         
     - name: Build Docker image
       run: |
